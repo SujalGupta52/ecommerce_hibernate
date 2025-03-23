@@ -3,15 +3,13 @@ package com.ecommerce.entitiy;
 import jakarta.persistence.*;
 
 @Entity
-public class Product {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
     @Column
-    private float price;
-    @Column
-    private int stockQuantity;
+    private String description;
 }
