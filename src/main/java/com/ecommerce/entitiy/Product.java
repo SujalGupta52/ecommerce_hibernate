@@ -14,4 +14,7 @@ public class Product {
     private float price;
     @Column
     private int stockQuantity;
+    @ManyToOne
+    @JoinColumn
+    private Category category;
 }

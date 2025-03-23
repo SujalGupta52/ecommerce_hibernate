@@ -12,4 +12,10 @@ public class OrderDetails {
     private int quantity;
     @Column
     private float unitPrice;
+    @ManyToOne
+    @JoinColumn
+    private Order order;
+    @ManyToOne
+    @JoinColumn
+    private Product product;
 }

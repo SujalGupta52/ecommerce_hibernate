@@ -2,6 +2,8 @@ package com.ecommerce.entitiy;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class Category {
     @Id
@@ -12,4 +14,7 @@ public class Category {
     private String name;
     @Column
     private String description;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinColumn
+    private Set<Product> products;
 }

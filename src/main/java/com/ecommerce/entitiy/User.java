@@ -2,6 +2,8 @@ package com.ecommerce.entitiy;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 enum Role {
     ADMIN, CUSTOMER
 }
@@ -21,4 +23,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn
+    private Set<Order> orders;
 }
