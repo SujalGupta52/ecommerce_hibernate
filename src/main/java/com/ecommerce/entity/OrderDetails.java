@@ -78,4 +78,15 @@ public class OrderDetails {
         this.product = product;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDetails{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", unitPrice=" + unitPrice +
+                ", orderId=" + order.getId() +
+                ", product=" + product.getName() +
+                '}';
+    }
 }

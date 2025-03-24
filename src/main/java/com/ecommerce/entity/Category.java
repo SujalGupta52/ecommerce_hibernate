@@ -69,11 +69,15 @@ public class Category {
 
     @Override
     public String toString() {
+        StringBuilder productList = new StringBuilder();
+        for (Product product : products) {
+            productList.append(product.getName()).append(",");
+        }
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", products=" + products +
+                ", products=" + productList +
                 '}';
     }
 }

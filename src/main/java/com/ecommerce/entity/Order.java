@@ -20,7 +20,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(nullable = false)
     private User user;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn
     private Set<OrderDetails> orderDetails;
 
@@ -90,7 +90,7 @@ public class Order {
                 "id=" + id +
                 ", orderDate=" + orderDate +
                 ", totalAmount=" + totalAmount +
-                ", user=" + user +
+                ", user=" + user.getUsername() +
                 ", orderDetails=" + orderDetails +
                 '}';
     }

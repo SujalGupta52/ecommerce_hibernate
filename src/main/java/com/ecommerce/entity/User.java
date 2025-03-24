@@ -4,10 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.Set;
 
-enum Role {
-    ADMIN, CUSTOMER
-}
-
 @Entity
 @Table(name = "users")
 public class User {
@@ -24,7 +20,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn
     private Set<Order> orders;
 
